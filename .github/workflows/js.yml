@@ -1,0 +1,32 @@
+name: CI
+
+on:
+
+branches: [ "main"]
+pull_request:
+branches: [ "main"]
+
+
+
+jobs:
+
+my_build_job:
+
+runs-on: ubuntu-latest
+steps:
+
+- uses: actions/checkout@v3
+
+
+-name: npm install? test and build
+run:
+npm install
+npm run build
+
+- name: run a multi-line script
+run:
+echo add other actions to build?
+echo test? and deploy your progect.
+
+-name: run JS file for test
+run: node js/script.js
